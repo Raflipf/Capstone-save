@@ -38,7 +38,12 @@ module.exports = {
     extensions: [".js"],
   },
   devServer: {
-    static: ".",
+    static: {
+      directory: ".",
+      watch: {
+        ignored: /dist/,
+      },
+    },
     open: true,
     port: 8085,
   },
